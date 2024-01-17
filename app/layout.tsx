@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
+import { NavigationMenuDemo } from '@/components/NavigationHeader'
 
 const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] })
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={notoSansJp.className}>
+        <NavigationMenuDemo/>
         <Header/>
         {children}</body>
     </html>

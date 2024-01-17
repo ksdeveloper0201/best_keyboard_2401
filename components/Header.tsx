@@ -1,7 +1,7 @@
 function Header() {
     return (
-        <div className="py-8 px-10">
-            <div className="font-medium">BestKeyboard</div>
+        <div className="w-full h-60 bg-gray-400">
+            <div className="text-4xl">BestKeyboard</div>
             <div></div>
         </div>
     );

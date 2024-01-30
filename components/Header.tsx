@@ -74,9 +74,9 @@ function Header() {
     return (
         <>
             <div id="first-header" className="flex justify-between">
-                <div className="py-8 px-10 flex items-center justify-between">
+                <div className="py-5 px-10 flex items-center justify-between">
                     <Link href={"/"} className="font-bold">
-                        BestKeyboard
+                        lifesaddle
                     </Link>
                 </div>
                 <div id="header-icons" className="flex items-center">

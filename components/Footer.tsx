@@ -11,7 +11,7 @@ function Footer() {
             <AiFillFacebook className="mx-4" />
             <AiOutlineInstagram className="mx-4" />
             <AiFillYoutube className="mx-4" />
-            <AiFillApple  className="mx-4" />
+            <AiFillApple className="mx-4" />
             <FaGooglePlay className="mx-4" />
         </div>
     );

@@ -13,6 +13,6 @@ interface Product {
     updatedAt?: number;
 }
 
-interface CardProps {
+interface ProductCardProps {
     product: Product;
 }

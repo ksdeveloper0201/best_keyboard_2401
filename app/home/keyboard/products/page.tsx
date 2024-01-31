@@ -1,17 +1,18 @@
-import IndexCard from "@/components/IndexCard";
-
+import Image from "next/image";
+import ProductCard from "@/components/ProductCard";
+import styles from './ProductsPage.module.css'; // CSSモジュールをインポート
 
 const products: Product[] = [
-    { id: 1, name: '商品1', description: '商品1の説明', price: 1000, image: '/product1.jpg' },
-    { id: 2, name: '商品2', description: '商品2の説明', price: 2000, image: '/product2.jpg' },
+    { id: 1, name: 'HHKB', description: 'キーボード界のヨーダ', price: 35000, image: '/images/hhkb-image.jpg' },
+    { id: 2, name: 'corne cherry', description: 'キーボード界のゲームチェンジャー', price: 20000, image: '/images/corne-cherry.jpg' },
     // 他の商品情報も追加
 ];
 
 const ProductsPage: React.FC = () => {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md: grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className={`container mx-auto p-4 ${styles.productsGrid}`}>
             {products.map((product) => (
-                <IndexCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
             ))}
         </div>
     );

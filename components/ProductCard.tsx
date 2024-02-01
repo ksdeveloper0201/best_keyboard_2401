@@ -20,10 +20,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     <Image src={product.image || defaultImage} alt="keyboard-image" width={500} height={300} />
                 </CardHeader>
                 <CardContent>
-                    <p>{product.price}</p>
+                    <p>￥ {product.price}</p>
                     <p>{product.keyCount}</p>
                     <p>{product.separable}</p>
-                    <CardDescription>Card Description</CardDescription>
+                    <CardDescription>{product.description}</CardDescription>
                 </CardContent>
                 <CardFooter>
                     <p>Card Footer</p>

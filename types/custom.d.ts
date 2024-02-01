@@ -1,7 +1,7 @@
 interface Product {
     id: number;
     name: string;
-    price: number;
+    price: string | number;
     keyCount?: number;
     image?: string;
     description?: string;

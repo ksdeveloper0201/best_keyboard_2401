@@ -15,7 +15,7 @@ export default function Home() {
                     <a href="https://jp.freepik.com/free-photo/antique-typewriter-close-up-of-metal-typebars-typing-text-generated-by-ai_41438114.htm#query=%E3%82%BF%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BF%E3%83%BC&position=2&from_view=keyword&track=sph&uuid=1e89ef2b-628d-4005-9399-b29008a0218d">著作者：vecstock</a>／出典：Freepik
                 </p>
             </div>
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto px-4 container">
                 <div id="main-body" className="flex justify-center mt-8">
                     <div id="body-main-text">
                         <h1 className="font-bold text-5xl p-5 bg-neutral-500 text-white text-center">

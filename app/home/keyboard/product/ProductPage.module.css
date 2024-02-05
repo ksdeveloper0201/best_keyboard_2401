@@ -1,0 +1,21 @@
+.productContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.imageContainer {
+    flex: 1;
+    padding: 10px;
+}
+
+.productDetails {
+    flex: 2;
+    padding: 10px;
+}
+
+.price {
+    color: #0070f3;
+    font-weight: bold;
+}

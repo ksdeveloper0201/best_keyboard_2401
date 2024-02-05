@@ -12,16 +12,18 @@ const product = {
 
 const ProductPage: React.FC = () => {
     return (
-
-        <div className="flex lfex-wrow items start p-20">
-            <div className="flex-1 p-10">
-                <Image src={product.image} alt={product.name} width={600} height={400}></Image>
-            </div>
+        <div className="flex flex-row items-start p-20">
             <div className="flex-2 p-10">
-                <p className="font-bold">{product.price}</p>
+                <Image src={product.image} alt={product.name} width={600} height={400} />
+            </div>
+            <div className="flex-2 p-10 flex-col gap-y-8">
+                <h1>{product.name}</h1>
+                <p>{product.description}</p>
+                <p className="text-blue-500 font-bold">{product.price}</p>
+                {/* ここに購入ボタンやその他の情報を追加 */}
             </div>
         </div>
-    )
+    );
 }
 
 export default ProductPage;

@@ -26,9 +26,15 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <Header />
-                    {children}
-                    <Footer />
+                    <header>
+                        <Header />
+                    </header>
+                    <main>
+                        {children}
+                    </main>
+                    <footer>
+                        <Footer />
+                    </footer>
                 </ThemeProvider>
             </body>
         </html>

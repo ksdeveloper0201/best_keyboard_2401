@@ -2,10 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 import { FaUserCircle } from "@react-icons/all-files/fa/FaUserCircle";
 import { FaHeart } from "@react-icons/all-files/fa/FaHeart";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+import { FiMenu } from "@react-icons/all-files/fi/FiMenu";
+import { IoSearchOutline } from "@react-icons/all-files/io5/IoSearchOutline";
+
 
 
 
@@ -69,137 +73,40 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    }
+
     const { setTheme } = useTheme();
 
     return (
         <>
-            <div id="first-header" className="flex justify-between">
-                <div className="py-5 px-10 flex items-center justify-between">
-                    <Link href={"/"} className="font-bold">
+            <div id="first-header" className=" md:flex justify-between">
+                <div className="py-4 px-4  items-center justify-center flex relative">
+                    <FiMenu className="mr-auto cursor-pointer" onClick={toggleMenu} />
+                    <Link href={"/"} className="font-bold absolute text-center">
                         lifesaddle
                     </Link>
+                    <div className="ml-auto flex gap-4" >
+                        <IoSearchOutline />
+                        <FaUserCircle />
+                    </div>
                 </div>
-                <div id="second-header" className="flex justify-around">
-
-                    <div id="dropDown-menu" className="flex items-center gap-4">
-                        <div>
-                            {" "}
-                            <NavigationMenu>
-                                <NavigationMenuList>
-                                    <NavigationMenuItem>
-                                        <NavigationMenuTrigger>
-                                            Getting started
-                                        </NavigationMenuTrigger>
-                                        <NavigationMenuContent>
-                                            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                                                <li className="row-span-3">
-                                                    <NavigationMenuLink asChild>
-                                                        <a
-                                                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                            href="/"
-                                                        >
-                                                            <div className="mb-2 mt-4 text-lg font-medium">
-                                                                shadcn/ui
-                                                            </div>
-                                                            <p className="text-sm leading-tight text-muted-foreground">
-                                                                Beautifully designed
-                                                                components built with
-                                                                Radix UI and Tailwind
-                                                                CSS.
-                                                            </p>
-                                                        </a>
-                                                    </NavigationMenuLink>
-                                                </li>
-                                                <ListItem
-                                                    href="/docs"
-                                                    title="Introduction"
-                                                >
-                                                    Re-usable components built using
-                                                    Radix UI and Tailwind CSS.
-                                                </ListItem>
-                                                <ListItem
-                                                    href="/docs/installation"
-                                                    title="Installation"
-                                                >
-                                                    How to install dependencies and
-                                                    structure your app.
-                                                </ListItem>
-                                                <ListItem
-                                                    href="/docs/primitives/typography"
-                                                    title="Typography"
-                                                >
-                                                    Styles for headings, paragraphs,
-                                                    lists...etc
-                                                </ListItem>
-                                            </ul>
-                                        </NavigationMenuContent>
-                                    </NavigationMenuItem>
-                                    <NavigationMenuItem>
-                                        <NavigationMenuTrigger>
-                                            Components
-                                        </NavigationMenuTrigger>
-                                        <NavigationMenuContent>
-                                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                                {components.map((component) => (
-                                                    <ListItem
-                                                        key={component.title}
-                                                        title={component.title}
-                                                        href={component.href}
-                                                    >
-                                                        {component.description}
-                                                    </ListItem>
-                                                ))}
-                                            </ul>
-                                        </NavigationMenuContent>
-                                    </NavigationMenuItem>
-                                    <NavigationMenuItem>
-                                        <Link href="/docs" legacyBehavior passHref>
-                                            <NavigationMenuLink
-                                                className={navigationMenuTriggerStyle()}
-                                            >
-                                                Documentation
-                                            </NavigationMenuLink>
-                                        </Link>
-                                    </NavigationMenuItem>
-                                </NavigationMenuList>
-                            </NavigationMenu>
-                        </div>
+                {isMenuOpen && (
+                    <div className="absolute top-full left-0 bg-white shadow-md w-full">
+                        <ul className="list-none p-4">
+                            <li><Link href="/about-keyboards">キーボードについて</Link></li>
+                            <li><Link href="/ranking">ランキング</Link></li>
+                            <li><Link href="/search-keyboard">キーボードを探す</Link></li>
+                            <li><Link href="/favorites">お気に入り</Link></li>
+                        </ul>
 
                     </div>
+                )}
 
-                </div>
-                <div id="header-icons" className="flex items-center">
-                    <FaUserCircle className="mx-4" />
-                    <FaHeart className="mx-4" />
-                    <FaSearch className="mx-4" />
-                    <div id="toggle-darkmode" className="mx-4">
-                        {" "}
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button variant="outline" size="icon">
-                                    <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                                    <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                                    <span className="sr-only">Toggle theme</span>
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                                <DropdownMenuItem onClick={() => setTheme("light")}>
-                                    Light
-                                </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => setTheme("dark")}>
-                                    Dark
-                                </DropdownMenuItem>
-                                <DropdownMenuItem
-                                    onClick={() => setTheme("system")}
-                                >
-                                    System
-                                </DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </div>
 
-                </div>
-            </div>
+            </div >
 
         </>
     );

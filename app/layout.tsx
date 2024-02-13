@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import TailwindHeader from "@/components/TailwindHeader";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
                 >
                     <header>
                         <Header />
+                        {/* <TailwindHeader /> */}
                     </header>
                     <main>
                         {children}

@@ -15,7 +15,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     return (
         <>
             <Card >
-                <CardHeader>
+                <CardHeader m-4>
                     <CardTitle>{product.name}</CardTitle>
                     <Image src={product.image || defaultImage} alt="keyboard-image" width={500} height={300} />
                 </CardHeader>

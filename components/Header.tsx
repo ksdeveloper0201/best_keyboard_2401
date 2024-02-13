@@ -34,44 +34,6 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-// const components: { title: string; href: string; description: string }[] = [
-//     {
-//         title: "Alert Dialog",
-//         href: "/docs/primitives/alert-dialog",
-//         description:
-//             "A modal dialog that interrupts the user with important content and expects a response.",
-//     },
-//     {
-//         title: "Hover Card",
-//         href: "/docs/primitives/hover-card",
-//         description:
-//             "For sighted users to preview content available behind a link.",
-//     },
-//     {
-//         title: "Progress",
-//         href: "/docs/primitives/progress",
-//         description:
-//             "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-//     },
-//     {
-//         title: "Scroll-area",
-//         href: "/docs/primitives/scroll-area",
-//         description: "Visually or semantically separates content.",
-//     },
-//     {
-//         title: "Tabs",
-//         href: "/docs/primitives/tabs",
-//         description:
-//             "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-//     },
-//     {
-//         title: "Tooltip",
-//         href: "/docs/primitives/tooltip",
-//         description:
-//             "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-//     },
-// ];
-
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => {
@@ -119,17 +81,17 @@ function Header() {
 
                 </ul>
             </div>
-            <div className="bg-gray-100 p-4 flex justify-center divide-x divide-gray-400 hidden md:flex">
-                <Link href="/about-keyboards" className="mx-4">
+            <div className="p-2 border-y justify-center divide-x divide-gray-400 hidden md:flex">
+                <Link href="/about-keyboards" className="flex-grow text-center hover:bg-gray-100">
                     About Keyboards
                 </Link>
-                <Link href="/ranking" className="mx-4">
+                <Link href="/ranking" className="flex-grow text-center hover:bg-gray-100">
                     Ranking
                 </Link>
-                <Link href="/search-keyboards" className="mx-4">
+                <Link href="/search-keyboards" className="flex-grow text-center hover:bg-gray-100">
                     Search Keyboards
                 </Link>
-                <Link href="/favorites" className="mx-4">
+                <Link href="/favorites" className="flex-grow text-center hover:bg-gray-100">
                     Favorites
                 </Link>
             </div>
